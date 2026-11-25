@@ -1,75 +1,645 @@
----
-layout: default
-menu: home
-css: ['index.css', 'sidebar-popular-repo.css']
----
-<div class="jumbotron"
-    style="background-image: url('assets/images/Columns_Jesse.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 200px 0; text-align: center; color: white;">
-    <div class="container">
-        <!-- <h1>Welcome to My Website</h1>
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
-                content or information.</p> -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>张驰 · 同济大学经济与管理学院</title>
+  <meta name="description" content="张驰，同济大学经济与管理学院、管理高等研究院博士后。研究兴趣为管理学中的社会议题，尤其关注残疾包容与污名化员工。">
+  <meta name="author" content="Chi Zhang, 张驰">
+  <meta name="theme-color" content="#34495e">
+  <meta property="og:title" content="张驰 Chi Zhang">
+  <meta property="og:description" content="Postdoctoral researcher, Tongji University. Social issues in management, disability inclusion, and stigmatized workers.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="assets/chi-zhang.jpg">
+  <link rel="icon" href="assets/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@300;400;700&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search).get("lang");
+        if (q === "en") { document.documentElement.lang = "en"; return; }
+        if (q === "zh" || q === "zh-CN") { document.documentElement.lang = "zh-CN"; return; }
+        var l = localStorage.getItem("chi-zhang-lang");
+        if (l === "en" || l === "zh-CN") document.documentElement.lang = l;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#about"><span class="lang-zh">跳到正文</span><span class="lang-en">Skip to content</span></a>
+
+  <nav class="navbar navbar-light" id="navbar-main">
+    <div class="container-xl">
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="#about">
+          <span class="lang-zh">张驰</span><span class="lang-en">Chi Zhang</span>
+        </a>
+      </div>
+      <button type="button" class="navbar-toggler" aria-controls="navbar-content" aria-expanded="false" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="#about">
+          <span class="lang-zh">张驰</span><span class="lang-en">Chi Zhang</span>
+        </a>
+      </div>
+      <div class="navbar-collapse" id="navbar-content">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about"><span class="lang-zh">首页</span><span class="lang-en">Home</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#thesis"><span class="lang-zh">学位论文</span><span class="lang-en">PhD Thesis</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications"><span class="lang-zh">论文</span><span class="lang-en">Publications</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#working"><span class="lang-zh">工作论文</span><span class="lang-en">Working Papers</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#presentations"><span class="lang-zh">会议</span><span class="lang-en">Presentations</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#grants"><span class="lang-zh">基金</span><span class="lang-en">Grants</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact"><span class="lang-zh">联系</span><span class="lang-en">Contact</span></a></li>
+        </ul>
+      </div>
+      <ul class="nav-icons">
+        <li>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-lang="zh-CN" aria-pressed="true" lang="zh-CN">中文</button>
+            <span class="sep" aria-hidden="true">/</span>
+            <button type="button" data-lang="en" aria-pressed="false" lang="en">English</button>
+          </div>
+        </li>
+      </ul>
     </div>
-</div>
-<!-- <section class="jumbotron"
-    style="background-image: url('https://raw.github.com/wangshaoyun/image/master/202410112129043.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 200px 0; text-align: center; color: white;">
-    <div class="container">
-        <h1>{{ site.title }}</h1>
-        <div id="jumbotron-meta-info">
-            {% if site.location %}
-            <span class="meta-info">
-                <span class="octicon octicon-location"></span>
-                {{ site.location }}
-            </span> {% endif %}
-            {% if site.company %}
-            <span class="meta-info hvr-grow">
-                <span class="octicon octicon-organization"></span>
-                <a href="{{ site.company_url }}" target="_blank">{{ site.company }}</a>
-            </span> {% endif %}
-            {% if site.github_username %}
-            <span class="meta-info hvr-grow">
-                <span class="octicon octicon-mark-github"></span>
-                <a href="{{ site.github_url }}" target="_blank">@{{ site.github_username }}</a>
-            </span> {% endif %}
-        </div>
-    </div>
-</section> -->
-<section class="content container">
+  </nav>
 
-    <div class="row">
-
-        <!-- Post List -->
-        <div class="col-md-8">
-
-            <ol class="post-list">
-                {% for post in paginator.posts %}
-                <li class="post-list-item">
-                    <h2 class="post-list-title">
-                        <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                    </h2>
-                    <p class="post-list-description">
-                        {{ post.excerpt | strip_html | strip }}
-                    </p>
-                    <p class="post-list-meta">
-                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
-                    </p>
+  <main>
+    <section id="about" class="home-section wg-about">
+      <div class="home-section-bg"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div id="profile">
+              <img class="avatar avatar-circle" src="assets/chi-zhang.jpg" width="1572" height="1572" alt="Portrait of Chi Zhang / 张驰近照">
+              <div class="portrait-title">
+                <h2>
+                  <span class="lang-zh">张驰</span>
+                  <span class="lang-en">Chi Zhang</span>
+                </h2>
+                <h3>
+                  <span class="lang-zh">Chi Zhang | 同济大学博士后</span>
+                  <span class="lang-en">张驰 | Postdoctoral Researcher, Tongji University</span>
+                </h3>
+                <h3>
+                  <span class="lang-zh">同济大学经济与管理学院 · 管理高等研究院</span>
+                  <span class="lang-en">School of Economics and Management · Advanced Institute of Business, Tongji University</span>
+                </h3>
+              </div>
+              <ul class="network-icon">
+                <li>
+                  <a href="mailto:czhangtj@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope big-icon"></i>
+                  </a>
                 </li>
-                {% endfor %}
+                <li>
+                  <a href="assets/Chi_Zhang_CV.pdf" download="Chi_Zhang_CV.pdf" aria-label="Curriculum Vitae">
+                    <i class="fas fa-file-alt big-icon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://aib.tongji.edu.cn/8d/11/c17222a363793/page.htm" rel="noopener noreferrer" aria-label="Official AIB profile">
+                    <i class="fas fa-university big-icon"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div class="article-style">
+              <p class="lang-zh">研究方向聚焦于管理学领域的社会议题，核心关注残疾包容与污名化员工群体相关问题。具体而言，致力于探究商业场景中弱势群体的能动性如何有效改善其不利处境。我坚信，严谨的学术研究能够助力构建更美好、更公正的社会。</p>
+              <p class="lang-en">My research interests broadly situate in social issues in management, with a primary focus on disability inclusion and stigmatized workers. Specifically, I am dedicated to exploring how the agency of vulnerable groups in the business context can successfully ameliorate their disadvantaged situations. I believe that rigorous research can help build a better and more just society.</p>
+              <p class="lang-zh">2025年12月至今，任同济大学经济与管理学院博士后，所属机构为管理高等研究院。2018年9月至2025年12月在同济大学攻读管理学博士（组织行为学），指导教师为梁建教授。2024年3月至10月，于美国密苏里大学杜拉斯克（Trulaske）商学院管理学系访问，指导教师为 John Schaubroeck 与 Ann Peng 教授。</p>
+              <p class="lang-en">Since December 2025, I have been a postdoctoral researcher at the School of Economics and Management, Tongji University, affiliated with the Advanced Institute of Business. I received my Ph.D. in Management (Organizational Behavior) from Tongji University (2018–2025), advised by Prof. Jian Liang (梁建). From March to October 2024, I was a visiting Ph.D. student in the Management Department at the Trulaske College of Business, University of Missouri, advised by Prof. John Schaubroeck and Prof. Ann Peng.</p>
+            </div>
+            <div class="row">
+              <div class="col-md-5">
+                <div class="section-subheading"><span class="lang-zh">研究兴趣</span><span class="lang-en">Interests</span></div>
+                <ul class="ul-interests mb-0">
+                  <li><span class="lang-zh">管理中的社会议题</span><span class="lang-en">Social issues in management</span></li>
+                  <li><span class="lang-zh">残疾包容</span><span class="lang-en">Disability inclusion</span></li>
+                  <li><span class="lang-zh">污名身份和工作</span><span class="lang-en">Stigma and work</span></li>
+                  <li><span class="lang-zh">职业安全与健康</span><span class="lang-en">Occupational safety and health</span></li>
+                </ul>
+              </div>
+              <div class="col-md-7">
+                <div class="section-subheading"><span class="lang-zh">教育背景</span><span class="lang-en">Education</span></div>
+                <ul class="ul-edu fa-ul mb-0">
+                  <li>
+                    <i class="fa-li fas fa-graduation-cap"></i>
+                    <div class="description">
+                      <p class="institution">
+                        <span class="lang-zh">同济大学经济与管理学院 / 管理高等研究院</span>
+                        <span class="lang-en">Tongji University, Advanced Institute of Business</span>
+                        <span class="edu-years">2018 – 2025</span>
+                      </p>
+                      <p class="course">
+                        <span class="lang-zh">管理学博士（组织行为学）</span>
+                        <span class="lang-en">Ph.D., Management (Organizational Behavior)</span>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-graduation-cap"></i>
+                    <div class="description">
+                      <p class="institution">
+                        <span class="lang-zh">美国密苏里大学杜拉斯克（Trulaske）商学院</span>
+                        <span class="lang-en">University of Missouri, Trulaske College of Business</span>
+                        <span class="edu-years">2024</span>
+                      </p>
+                      <p class="course">
+                        <span class="lang-zh">管理学系访问博士生（3月–10月）</span>
+                        <span class="lang-en">Visiting Ph.D. Student, Management Department (Mar.–Oct.)</span>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-graduation-cap"></i>
+                    <div class="description">
+                      <p class="institution">
+                        <span class="lang-zh">中国矿业大学管理学院</span>
+                        <span class="lang-en">China University of Mining and Technology</span>
+                        <span class="edu-years">2014 – 2018</span>
+                      </p>
+                      <p class="course">
+                        <span class="lang-zh">管理学学士（人力资源管理）</span>
+                        <span class="lang-en">B.Mgt., Human Resource Management</span>
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="section-subheading"><span class="lang-zh">学术服务</span><span class="lang-en">Academic Service</span></div>
+                <p class="service-note">
+                  <span class="lang-zh">《Applied Psychology: An International Review》编委，2026年至今。</span>
+                  <span class="lang-en">Editorial Board Member, <i>Applied Psychology: An International Review</i>, 2026–Present.</span>
+                </p>
+                <p class="service-note">
+                  <span class="lang-zh">特约审稿人：美国管理学会（AOM）年会；中国管理国际学会（IACMR）双年会。</span>
+                  <span class="lang-en">Ad-hoc reviewer: Academy of Management (AOM) Annual Meeting; International Association for Chinese Management Research (IACMR) Conference.</span>
+                </p>
+              </div>
+              <div class="col-md-11">
+                <div class="section-subheading"><span class="lang-zh">动态</span><span class="lang-en">News</span></div>
+                <ul class="ul-interests fa-ul mb-0 news-list">
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2026/9] 在美国消费者研究协会年会（ACR，芝加哥）报告论文 Valued inside, hidden outside。</span>
+                    <span class="lang-en">[2026/9] Presented “Valued inside, hidden outside” at the Association for Consumer Research Annual Conference, Chicago.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2026/5] 论文《自然出新意：亲自然工作设计对员工绿色服务创新行为的影响机制研究》发表于《管理评论》第38卷第5期。</span>
+                    <span class="lang-en">[2026/5] Paper on biophilic work design and employee green service innovation published in <i>Management Review</i> (管理评论), 38(5).</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2026] 获国家自然科学基金青年科学基金项目（C类）资助（2027年1月–2029年12月）。</span>
+                    <span class="lang-en">[2026] Awarded the NSFC Young Scientists Fund (Category C) for 2027–2029.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2026] 担任 <i>Applied Psychology: An International Review</i> 编委。</span>
+                    <span class="lang-en">[2026] Appointed Editorial Board Member of <i>Applied Psychology: An International Review</i>.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2025/12] 于同济大学经济与管理学院、管理高等研究院开始博士后工作；同年获管理学博士学位。</span>
+                    <span class="lang-en">[2025/12] Began a postdoctoral position at Tongji University’s School of Economics and Management and Advanced Institute of Business, after completing the Ph.D. in Management.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2025/10] 在第十九届中国残疾人事业发展论坛报告 “Models of Disability Business Inclusion in the Chinese Context”。</span>
+                    <span class="lang-en">[2025/10] Presented “Models of Disability Business Inclusion in the Chinese Context” at the 19th Forum on the Development of Disability Cause in China.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2025/9] 论文 Green ambidextrous leadership configurations and employee green innovation 发表于 <i>Humanities and Social Sciences Communications</i>。</span>
+                    <span class="lang-en">[2025/9] Paper on green ambidextrous leadership published in <i>Humanities and Social Sciences Communications</i>.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2025] 作为贡献者与共同作者，参与撰写联合国亚太经社会（UNESCAP）<i>Strategic Cooperation Guide for Disability Social Organizations and Disability-Inclusive Enterprises</i>。</span>
+                    <span class="lang-en">[2025] Co-authored the UNESCAP <i>Strategic Cooperation Guide for Disability Social Organizations and Disability-Inclusive Enterprises</i>.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2025/4] 论文 Unraveling the effects of leader perfectionism on team dynamics 发表于 <i>Humanities and Social Sciences Communications</i>。</span>
+                    <span class="lang-en">[2025/4] Paper on leader perfectionism and team dynamics published in <i>Humanities and Social Sciences Communications</i>.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2024/8] 论文 From marginalization to inclusion 入选美国管理学会年会 Best Paper Proceedings。</span>
+                    <span class="lang-en">[2024/8] “From marginalization to inclusion” published in the Best Paper Proceedings of the Academy of Management.</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2024/3] 赴美国密苏里大学杜拉斯克商学院管理学系访问（至2024年10月）。</span>
+                    <span class="lang-en">[2024/3] Began a visiting Ph.D. appointment at the University of Missouri, Trulaske College of Business (through October 2024).</span>
+                  </li>
+                  <li>
+                    <i class="fa-li fas fa-volume-up"></i>
+                    <span class="lang-zh">[2023/6] 论文 Back to the stage 获 IACMR–RRBM 最佳论文奖。</span>
+                    <span class="lang-en">[2023/6] “Back to the stage” received the IACMR–RRBM Best Paper Award.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thesis" class="home-section">
+      <div class="home-section-bg"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="section-heading col-12 mb-3 text-center">
+            <h1 class="mb-0"><span class="lang-zh">博士学位论文</span><span class="lang-en">PhD Thesis</span></h1>
+          </div>
+          <div class="col-12">
+            <div class="thesis-block">
+              <div class="thesis-meta">
+                <p class="thesis-affiliation">
+                  <span class="lang-zh">同济大学 · 经济与管理学院 / 管理高等研究院 · 2025</span>
+                  <span class="lang-en">Tongji University · Advanced Institute of Business · 2025</span>
+                </p>
+                <p class="thesis-title">The Role of Disability Agency in Fostering Organizational Disability Inclusion</p>
+                <p class="thesis-advisor">
+                  <span class="lang-zh">中文撰写。指导教师：梁建教授（Jian Liang）。</span>
+                  <span class="lang-en">Written in Chinese. Advised by Prof. Jian Liang (梁建).</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="home-section">
+      <div class="home-section-bg"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="section-heading col-12 mb-3 text-center">
+            <h1 class="mb-0"><span class="lang-zh">期刊论文</span><span class="lang-en">Publications</span></h1>
+          </div>
+          <div class="col-12">
+
+            <div class="media stream-item">
+              <div class="row">
+                  <div class="col-12 col-lg-4">
+                    <div class="pub-tile" aria-hidden="true">
+                      <span class="pub-tile-journal">管理评论</span>
+                      <span class="pub-tile-year">2026</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-7">
+                    <div class="media-body">
+                      <div class="section-subheading article-title mb-0 mt-0">自然出新意：亲自然工作设计对员工绿色服务创新行为的影响机制研究</div>
+                      <div class="stream-meta article-metadata">
+                        <div>
+                          芦慧, 刘霞, 郑佳艺, <span class="author-highlighted">张驰</span>, &amp; 刘颖
+                        </div>
+                        <span class="pub-publication"><cite>管理评论</cite>, 38(5), 158–170</span>
+                        <span class="middot-divider"></span>
+                        <span class="article-date"><span class="lang-zh">2026年5月</span><span class="lang-en">May 2026</span></span>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="media stream-item">
+              <div class="row">
+                  <div class="col-12 col-lg-4">
+                    <a class="pub-tile" href="https://doi.org/10.1057/s41599-025-05747-2">
+                      <span class="pub-tile-journal">HSS Communications</span>
+                      <span class="pub-tile-year">2025</span>
+                    </a>
+                  </div>
+                  <div class="col-12 col-lg-7">
+                    <div class="media-body">
+                      <div class="section-subheading article-title mb-0 mt-0">
+                        <a href="https://doi.org/10.1057/s41599-025-05747-2">Green ambidextrous leadership configurations and employee green innovation: A cognitive-affective processing system perspective on psychological mechanisms</a>
+                      </div>
+                      <div class="stream-meta article-metadata">
+                        <div>
+                          Hui Lu, Shen Xu, <span class="author-highlighted">Chi Zhang</span>*, Huanmei Pi, Sixuan Chen, &amp; Congxin Wu
+                        </div>
+                        <span class="pub-publication"><cite>Humanities and Social Sciences Communications</cite>, 12, Article 1489</span>
+                        <span class="middot-divider"></span>
+                        <span class="article-date"><span class="lang-zh">2025年9月</span><span class="lang-en">September 2025</span></span>
+                      </div>
+                      <div class="article-style">
+                        <span class="lang-zh">考察绿色双元领导如何通过绿色正念与和谐绿色激情影响员工绿色创新行为。</span>
+                        <span class="lang-en">Examines how green ambidextrous leadership shapes employee green innovation via green mindfulness and harmonious green passion.</span>
+                      </div>
+                      <div class="btn-links">
+                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1057/s41599-025-05747-2">DOI</a>
+                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://www.nature.com/articles/s41599-025-05747-2"><span class="lang-zh">开放获取</span><span class="lang-en">Open access</span></a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="media stream-item">
+              <div class="row">
+                  <div class="col-12 col-lg-4">
+                    <a class="pub-tile" href="https://doi.org/10.1057/s41599-025-04565-w">
+                      <span class="pub-tile-journal">HSS Communications</span>
+                      <span class="pub-tile-year">2025</span>
+                    </a>
+                  </div>
+                  <div class="col-12 col-lg-7">
+                    <div class="media-body">
+                      <div class="section-subheading article-title mb-0 mt-0">
+                        <a href="https://doi.org/10.1057/s41599-025-04565-w">Unraveling the effects of leader perfectionism on team dynamics: An emotion-motivation perspective</a>
+                      </div>
+                      <div class="stream-meta article-metadata">
+                        <div>
+                          Yamei Liu, Zhaopeng Liu, Danting Chang, &amp; <span class="author-highlighted">Chi Zhang</span>*
+                        </div>
+                        <span class="pub-publication"><cite>Humanities and Social Sciences Communications</cite>, 12, Article 570</span>
+                        <span class="middot-divider"></span>
+                        <span class="article-date"><span class="lang-zh">2025年4月</span><span class="lang-en">April 2025</span></span>
+                      </div>
+                      <div class="article-style">
+                        <span class="lang-zh">从情绪—动机视角分析领导者他人导向完美主义对团队情感基调、动机与伦理行为的影响，并考察团队韧性的调节作用。</span>
+                        <span class="lang-en">Investigates how leader other-oriented perfectionism affects team affective tones, motivations, and ethical behaviors, contingent on team trait resilience.</span>
+                      </div>
+                      <div class="btn-links">
+                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1057/s41599-025-04565-w">DOI</a>
+                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://www.nature.com/articles/s41599-025-04565-w"><span class="lang-zh">开放获取</span><span class="lang-en">Open access</span></a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="media stream-item">
+              <div class="row">
+                  <div class="col-12 col-lg-4">
+                    <div class="pub-tile" aria-hidden="true">
+                      <span class="pub-tile-journal">中国人力资源开发</span>
+                      <span class="pub-tile-year">2024</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-7">
+                    <div class="media-body">
+                      <div class="section-subheading article-title mb-0 mt-0">跨部门合作促进残疾人就业的制度困境: 基于一家公益性中介组织的案例研究</div>
+                      <div class="stream-meta article-metadata">
+                        <div>
+                          梁建, <span class="author-highlighted">张驰</span>*, &amp; 王涛
+                        </div>
+                        <span class="pub-publication"><cite>中国人力资源开发</cite>, 41(12), 92–112</span>
+                        <span class="middot-divider"></span>
+                        <span class="article-date">2024</span>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <p class="legend">
+              <span class="lang-zh">* 通讯作者。</span>
+              <span class="lang-en">* Corresponding author.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="working" class="home-section">
+      <div class="home-section-bg"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="section-heading col-12 mb-3 text-center">
+            <h1 class="mb-0"><span class="lang-zh">工作论文</span><span class="lang-en">Working Papers</span></h1>
+          </div>
+          <div class="col-12">
+            <div class="section-subheading"><span class="lang-zh">在审与修改再投</span><span class="lang-en">Under review and revise and resubmit</span></div>
+            <ol class="work-list">
+              <li>
+                <p class="work-title">A power-dependence model of supervisory behaviors toward subordinates under financial scarcity: The moderating role of supervisor Social Darwinism belief.</p>
+                <p class="work-meta">Zong, B., Tang, Z., <span class="author-highlighted">Zhang, C.</span>*, Zhao, S., Liu, Y., &amp; Wang, J. <cite>Human Relations</cite>.</p>
+                <p class="status"><span class="lang-zh">修改再投（第二轮修改稿审稿中）</span><span class="lang-en">Revise and resubmit (second-round revision under review)</span></p>
+              </li>
+              <li>
+                <p class="work-title">Making outsider insider: The role of owner paternalism in family businesses.</p>
+                <p class="work-meta"><span class="author-highlighted">Zhang, C.</span>, Li, Y., Liang, J., &amp; Zhang, X. <cite>Asian Business &amp; Management</cite>.</p>
+                <p class="status"><span class="lang-zh">修改再投（第二轮修改稿审稿中）</span><span class="lang-en">Revise and resubmit (second-round revision under review)</span></p>
+              </li>
+              <li>
+                <p class="work-title">From global experience to local impact: How and when the top management team overseas experience drives ESG performance.</p>
+                <p class="work-meta">Lu, H., <span class="author-highlighted">Zhang, C.</span>*, &amp; Zheng, J. <cite>Business Ethics, the Environment &amp; Responsibility</cite>.</p>
+                <p class="status"><span class="lang-zh">修改再投（第二轮修改稿审稿中）</span><span class="lang-en">Revise and resubmit (second-round revision under review)</span></p>
+              </li>
+              <li>
+                <p class="work-title">Capitalizing on digital platforms for career advancement: The agentic role of people with physical disabilities.</p>
+                <p class="work-meta">Liang, J., <span class="author-highlighted">Zhang, C.</span>, Deng, H., &amp; Schaubroeck, J. <cite>Journal of Management</cite>.</p>
+                <p class="status"><span class="lang-zh">审稿中</span><span class="lang-en">Under review</span></p>
+              </li>
             </ol>
 
-            <!-- Pagination -->
-            {% include pagination.html %}
-
-            <!-- Comments -->
-            {% include disqus-comments.html %}
-
+            <div class="section-subheading"><span class="lang-zh">撰写中</span><span class="lang-en">In preparation</span></div>
+            <ol class="work-list">
+              <li>
+                <p class="work-title">When high standards meet the unexpected: How leader perfectionism shapes team serendipity.</p>
+                <p class="work-meta"><span class="author-highlighted">Zhang, C.</span>, Tang, Z., Zhang, X., Zhao, B., &amp; Schaubroeck, J. M.</p>
+                <p class="status"><span class="lang-zh">拟投 <cite>Academy of Management Journal</cite></span><span class="lang-en">Preparing for submission to <cite>Academy of Management Journal</cite></span></p>
+              </li>
+              <li>
+                <p class="work-title">Pushed for better or pushed too far? The role of task significance in shaping employees’ responses to leader perfectionism.</p>
+                <p class="work-meta">Tang, Z., <span class="author-highlighted">Zhang, C.</span>, Zhang, X., Li, S., &amp; Ma, B.</p>
+                <p class="status"><span class="lang-zh">拟投 <cite>Human Resource Management</cite></span><span class="lang-en">Preparing for submission to <cite>Human Resource Management</cite></span></p>
+              </li>
+              <li>
+                <p class="work-title">Recognizing agency in mixed-ability teams: When and how do persons with disabilities inspire collective performance?</p>
+                <p class="work-meta"><span class="author-highlighted">Zhang, C.</span>, Liang, J., Peng, A. C., &amp; Schaubroeck, J. M.</p>
+                <p class="status"><span class="lang-zh">拟投 <cite>Journal of Applied Psychology</cite></span><span class="lang-en">Preparing for submission to <cite>Journal of Applied Psychology</cite></span></p>
+              </li>
+              <li>
+                <p class="work-title">How and when personal agency elicits empowering support for employees with disabilities.</p>
+                <p class="work-meta"><span class="author-highlighted">Zhang, C.</span>, Liu, F., &amp; Li, Y.</p>
+                <p class="status"><span class="lang-zh">拟投 <cite>Journal of Applied Psychology</cite></span><span class="lang-en">Preparing for submission to <cite>Journal of Applied Psychology</cite></span></p>
+              </li>
+              <li>
+                <p class="work-title">From peers to pioneers: Within-group allyship in the disability community.</p>
+                <p class="work-meta"><span class="author-highlighted">Zhang, C.</span>, Zhang, S., Wang, T., Yu, H., Li, Y., &amp; Sun, K.</p>
+                <p class="status"><span class="lang-zh">拟投 <cite>Human Relations</cite></span><span class="lang-en">Preparing for submission to <cite>Human Relations</cite></span></p>
+              </li>
+            </ol>
+            <p class="legend">
+              <span class="lang-zh">* 通讯作者。</span>
+              <span class="lang-en">* Corresponding author.</span>
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="col-md-4">
-            {% include sidebar-popular-repo.html %}
+    <section id="presentations" class="home-section">
+      <div class="home-section-bg"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="section-heading col-12 mb-3 text-center">
+            <h1 class="mb-0"><span class="lang-zh">会议报告</span><span class="lang-en">Presentations</span></h1>
+          </div>
+          <div class="col-12">
+            <ol class="talk-list">
+              <li>
+                <p class="talk-title">Valued inside, hidden outside: Firms misforecast consumer responses to disability-employment disclosure.</p>
+                <p class="talk-meta">Li, Y., Zhang, C., Lu, R., &amp; Li, L. <span class="lang-zh">美国消费者研究协会年会（Association for Consumer Research Annual Conference），2026年9月24–26日，美国芝加哥。</span><span class="lang-en">Association for Consumer Research Annual Conference, September 24–26, 2026, Chicago, IL, United States.</span></p>
+              </li>
+              <li>
+                <p class="talk-title">Motivating teams in challenging times: The role of proactive employees with disabilities.</p>
+                <p class="talk-meta">Zhang, C., Liang, J., Peng, C. Y., &amp; Schaubroeck, J. <span class="lang-zh">美国管理学会第85届年会，2025年7月，丹麦哥本哈根。</span><span class="lang-en">85th Annual Meeting of the Academy of Management, July 2025, Copenhagen, Denmark.</span></p>
+              </li>
+              <li>
+                <p class="talk-title">Leader perfectionism and team serendipity: The role of team error appraisals and growth mindset.</p>
+                <p class="talk-meta">Zhang, C., Tang, Z. Y., Zhang, X., &amp; Zhao, N. B. <span class="lang-zh">美国管理学会第85届年会，2025年7月，丹麦哥本哈根。</span><span class="lang-en">85th Annual Meeting of the Academy of Management, July 2025, Copenhagen, Denmark.</span></p>
+              </li>
+              <li>
+                <p class="talk-title">Leader perfectionism and employee attributed motives.</p>
+                <p class="talk-meta">Tang, Z. Y., Zhang, C., Zhang, X., Ma, B., &amp; Li, S. K. <span class="lang-zh">美国管理学会第85届年会，2025年7月，丹麦哥本哈根。</span><span class="lang-en">85th Annual Meeting of the Academy of Management, July 2025, Copenhagen, Denmark.</span></p>
+              </li>
+              <li>
+                <p class="talk-title">From marginalization to inclusion: The journey of ingroup allies in empowering PWDs in labor market.</p>
+                <p class="talk-meta">Zhang, C., Zhang, S., &amp; Yu, H. <span class="lang-zh">美国管理学会第84届年会，2024年8月，美国芝加哥。</span><span class="lang-en">84th Annual Meeting of the Academy of Management, August 2024, Chicago, IL, United States.</span>
+                  <span class="honor"><span class="lang-zh">入选 Academy of Management Best Paper Proceedings</span><span class="lang-en">Best Paper Proceedings of the Academy of Management</span></span>
+                </p>
+              </li>
+              <li>
+                <p class="talk-title">跨部门协作失败: 基于一个社会公益项目制度困境的分析.</p>
+                <p class="talk-meta">梁建, 张驰, 王涛. <span class="lang-zh">第十届中国管理国际学会双年会（IACMR），2023年6月，中国香港。</span><span class="lang-en">10th IACMR Conference, June 2023, Hong Kong, China.</span></p>
+              </li>
+              <li>
+                <p class="talk-title">Back to the stage: How do disabilities capitalize on social media in improving social justice at work?</p>
+                <p class="talk-meta">Liang, J., Zhang, C., &amp; Deng, H. L. <span class="lang-zh">第十届中国管理国际学会双年会（IACMR），2023年6月，中国香港。</span><span class="lang-en">10th IACMR Conference, June 2023, Hong Kong, China.</span>
+                  <span class="honor"><span class="lang-zh">获 IACMR–RRBM 最佳论文奖</span><span class="lang-en">IACMR–RRBM Best Paper Award</span></span>
+                </p>
+              </li>
+              <li>
+                <p class="talk-title">Promoting nonfamily managers’ felt inclusion in family business: Role of owner paternalism.</p>
+                <p class="talk-meta">Zhang, C., Liang, J., &amp; Zhang, X. <span class="lang-zh">美国管理学会第82届年会（线上），2022年8月。</span><span class="lang-en">82nd Annual Meeting of the Academy of Management, August 2022 (virtual conference).</span></p>
+              </li>
+              <li>
+                <p class="talk-title">企业主家长主义和非家族管理者工作绩效：感知包容和权力距离的角色.</p>
+                <p class="talk-meta">张驰, 梁建, 张煦. <span class="lang-zh">第九届中国管理国际学会双年会（IACMR），2021年6月，线上。</span><span class="lang-en">9th IACMR Conference, June 2021 (virtual).</span></p>
+              </li>
+            </ol>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
+    <section id="grants" class="home-section">
+      <div class="home-section-bg"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="section-heading col-12 mb-3 text-center">
+            <h1 class="mb-0"><span class="lang-zh">科研项目</span><span class="lang-en">Grants</span></h1>
+          </div>
+          <div class="col-12">
+            <div class="section-subheading"><span class="lang-zh">项目负责人</span><span class="lang-en">Principal Investigator</span></div>
+            <ol class="grant-list">
+              <li>
+                <p class="grant-title">Turning Adversity into “Capital”: The Development, Recognition, and Value Transformation of Heterogeneity-Based Advantages among Employees with Disabilities.</p>
+                <p class="grant-meta">
+                  <span class="lang-zh">国家自然科学基金青年科学基金项目（C类）。项目负责人 · 30万元 · 2027年1月–2029年12月。</span>
+                  <span class="lang-en">National Natural Science Foundation of China (NSFC), Young Scientists Fund (Category C). Principal Investigator · RMB 300,000 · Jan. 2027–Dec. 2029.</span>
+                  <span class="status"><span class="lang-zh">已获批</span><span class="lang-en">Awarded</span></span>
+                </p>
+              </li>
+            </ol>
+            <div class="section-subheading"><span class="lang-zh">课题组成员</span><span class="lang-en">Project Member</span></div>
+            <ol class="grant-list">
+              <li>
+                <p class="grant-title">Personnel Organization and Micro-Level Operating Mechanisms of Open Innovation in Chinese Firms: A Global Perspective.</p>
+                <p class="grant-meta">
+                  <span class="lang-zh">上海市教育委员会重大人文社会科学研究创新项目。课题组成员 · 75万元 · 2023年1月–2027年12月。</span>
+                  <span class="lang-en">Shanghai Municipal Education Commission, Major Humanities and Social Sciences Research Innovation Project. Project Member · RMB 750,000 · Jan. 2023–Dec. 2027.</span>
+                  <span class="status"><span class="lang-zh">在研</span><span class="lang-en">Ongoing</span></span>
+                </p>
+              </li>
+              <li>
+                <p class="grant-title">Within-Team In-Group Relationships, Employee Voice, and Team Innovation Performance: A Team Microdynamics Perspective.</p>
+                <p class="grant-meta">
+                  <span class="lang-zh">国家自然科学基金面上项目。课题组成员 · 47万元 · 2020年1月–2023年12月。</span>
+                  <span class="lang-en">National Natural Science Foundation of China (NSFC), General Program. Project Member · RMB 470,000 · Jan. 2020–Dec. 2023.</span>
+                  <span class="status"><span class="lang-zh">已结题</span><span class="lang-en">Completed</span></span>
+                </p>
+              </li>
+              <li>
+                <p class="grant-title">The Determining Role of Market Consensus Structure in Firms’ Market and Technological Valuation Performance.</p>
+                <p class="grant-meta">
+                  <span class="lang-zh">国家自然科学基金面上项目，批准号 72172105。课题组成员 · 48万元 · 2022年1月–2025年12月。</span>
+                  <span class="lang-en">National Natural Science Foundation of China (NSFC), General Program, Grant No. 72172105. Project Member · RMB 480,000 · Jan. 2022–Dec. 2025.</span>
+                  <span class="status"><span class="lang-zh">已结题</span><span class="lang-en">Completed</span></span>
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section id="contact" class="home-section wg-contact">
+      <div class="home-section-bg"></div>
+      <div class="container">
+        <div class="row">
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0"><span class="lang-zh">联系方式</span><span class="lang-en">Contact</span></h1>
+          </div>
+          <div class="col-12 col-lg-8">
+            <ul class="fa-ul">
+              <li>
+                <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
+                <a href="mailto:czhangtj@gmail.com">czhangtj@gmail.com</a>
+              </li>
+              <li>
+                <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
+                <span class="lang-zh">同济大厦A楼2117室，上海</span>
+                <span class="lang-en">Room 2117, Tongji Building A, 1 Zhangwu Road, Shanghai, China</span>
+              </li>
+              <li>
+                <i class="fa-li fas fa-university fa-2x" aria-hidden="true"></i>
+                <a href="https://aib.tongji.edu.cn/8d/11/c17222a363793/page.htm" rel="noopener noreferrer">
+                  <span class="lang-zh">同济大学管理高等研究院个人主页</span>
+                  <span class="lang-en">Official profile, Advanced Institute of Business, Tongji University</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <p>
+      <a href="mailto:czhangtj@gmail.com">czhangtj@gmail.com</a>
+      ·
+      <a href="https://aib.tongji.edu.cn/8d/11/c17222a363793/page.htm" rel="noopener noreferrer">
+        <span class="lang-zh">官方主页</span><span class="lang-en">Official profile</span>
+      </a>
+    </p>
+    <p>
+      <span class="lang-zh">最近更新：2026年11月</span>
+      <span class="lang-en">Last updated November 2026</span>
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

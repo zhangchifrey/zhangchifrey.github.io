@@ -1,139 +1,80 @@
-# Yummy Jekyll Theme
+# 张驰个人学术主页 / Personal academic website of Chi Zhang
 
-A Simple, Bootstrap Based Theme. Especially for developers who like to show their projects on website and like to take notes. There are also some magical features to discover. 
+这是一份静态网页，无需安装或编译。用浏览器打开 `index.html` 即可预览，也可直接部署到 GitHub Pages 或其他静态托管。
 
-## [Live Demo](http://dongchuan.github.io/)
+This is a static site with no build step. Open `index.html` in a browser to preview it, or publish the folder to GitHub Pages or any static host.
 
-Open issues if you find bugs or even have trouble installing jekyll or dependencies. :D
+默认语言为中文，导航栏右侧可切换 English。语言选择会保存在浏览器的 localStorage 中，也可以使用 `?lang=en` 或 `?lang=zh` 打开对应语言。
 
-Or contact: dongchuan55@gmail.com
+The default language is Chinese. Use the 中文 / English toggle in the header; the choice is remembered in localStorage. You can also open `?lang=en` or `?lang=zh`.
 
-> Strongly suggest to fork and change project name to create your GitHub Pages instead of downloading it directly. Because in the future, I will develop many funny modules like 'footprint' to show your world wide trip. Could be easier to merge new features in the future.
-
-## Notable Features
-
-* Compatible with Jekyll 3.x and GitHub Pages
-* Based on Bootstrap
-* [Github Module](http://dongchuan.github.io/open-source) to show your popular projects in a single page and on sidebar automatically. (Datas are retreived by github metadata instead of by api calls, so no delay) 
-* [Post Module](http://dongchuan.github.io/blog) to show all your posts with timeline
-* [Bookmark Module](http://dongchuan.github.io/bookmark) to establish a quick mark about all libs/tools/books you like to use.
-* [Post Navigation Module](http://dongchuan.github.io/css/2016/04/22/CSS-Animation.html) to generat a quick directory of your post by titles/subtitles automatically.
-* Support [Disqus Comment](https://disqus.com/home/explore/)
-* Support [Google Analytics](https://analytics.google.com/analytics/web/)
-
-Features in future:
-* A Footprint module to show all your travel around the world
-* Feature to share. (Facebook, twitter, evernote and so on)
-* (Not sure) A embeded todo list. (Not sure) to travel, to complete, to do for your parents, etc. To do in life!
-* Creative ideas to discuss with you :P
-
-## Install and setup
-
-Before using it, you may need [Bower](http://bower.io/) and [Bundler](http://bundler.io/) on your local to install dependencies.
-
-1. Fork code and clone
-2. Run `bower install` to install all dependencies in [bower.json](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/bower.json)
-3. Run `bundle install` to install all dependencies in [Gemfile](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/Gemfile)
-4. Update `_config.yml` with your own settings.
-5. Add posts in `/_posts`
-6. Commit to your own Username.github.io repository.
-7. Then come back to star this theme!
-
-> When install dependencies by bundler or gem, you may have some errors depending on your environment.
-
-> Error about `json`. Check response of [Massimo Fazzolari on Stackoverflow](http://stackoverflow.com/questions/8100891/the-json-native-gem-requires-installed-build-tools) to quick fix your problem. (Please also use latest version instead of 1.9.3 mentioned in the response)
-  
-> Error about `jekyll-paginate`. Please check [here](http://stackoverflow.com/questions/35401566/dont-have-jekyll-paginate-or-one-of-its-dependencies-installed)
-
-> Error about `SSL_connect`. Please check [here](http://stackoverflow.com/questions/15305350/gem-install-fails-with-openssl-failure) and [here](http://railsapps.github.io/openssl-certificate-verify-failed.html)
-
-> For the moment, when you test on your local, you need to keep internet connection. Bug will be fixed soon.
-
-## How to use
-
-#### Create a new post
-
-Create a `.md` file inside `_posts` folder.
-
-Name the file according to the standard jekyll format.
-
-```
-2016-01-19-i-love-yummy.md
-```
-
-Write the Front Matter and content in the file.
-
-```
 ---
-layout: post
-title: Post title
-category: Category
-tags: [tag1, tag2]
+
+## 本地预览 / Preview locally
+
+1. 解压压缩包（或进入本文件夹），确认可以看到 `index.html`、`css/`、`js/`、`assets/`。
+2. 双击 `index.html`，用浏览器打开即可。
+3. 如需本地服务器（可选）：
+
+```bash
+# 在本文件夹中运行 / run this inside the site folder
+python3 -m http.server 8000
+```
+
+然后访问 http://localhost:8000 。网页引用了 Google Fonts 与 Font Awesome，首次打开需要联网；字体与图标加载完成后，版式会更完整。正文、照片和简历不依赖外网。
+
+Then visit http://localhost:8000. The page loads typefaces from Google Fonts and icons from Font Awesome, so a network connection is needed for the typography and icons to appear as designed. The text, portrait, and CV work offline.
+
 ---
+
+## 发布到 GitHub Pages / Publish on GitHub Pages
+
+1. 在 GitHub 新建一个仓库，例如 `chi-zhang` 或 `username.github.io`（若使用 `username.github.io` 作为仓库名，网站会发布在 `https://username.github.io/`）。
+2. 将**本文件夹中的全部内容**（`index.html`、`css/`、`js/`、`assets/`、本 README）上传到仓库根目录，不要再套一层 `site/` 文件夹。可用 GitHub 网页上传，或在本地执行：
+
+```bash
+git init
+git add .
+git commit -m "Add personal academic website"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
 ```
 
-Please find examples [here](https://github.com/DONGChuan/DONGChuan.github.io/tree/master/_posts)
+3. 打开仓库 **Settings → Pages**。在 **Build and deployment** 中选择 **Deploy from a branch**，Branch 选 `main`，Folder 选 `/ (root)`，保存。
+4. 数分钟后，网站会出现在：
+   - `https://<your-username>.github.io/<your-repo>/`，或
+   - `https://<your-username>.github.io/`（若仓库名是 `username.github.io`）。
+5. 如需绑定个人域名，在 Pages 设置中填写 Custom domain，并按提示在域名服务商处添加 DNS 记录。
 
-> Jekyll supports different structure of repository. You could just create as many folders as you want under _posts. Then jekyll will look through all folders/subfolders to find your posts. So cool, right? :D
+There is no Node.js, npm, or build command. Do not upload a parent folder that only contains this directory; `index.html` must sit at the root of the publishing source.
 
-#### [Post Navigation Module](http://dongchuan.github.io/css/2016/04/22/CSS-Animation.html)
+其他静态托管（Cloudflare Pages、Netlify、Vercel、学校提供的个人空间等）同样只需上传本文件夹内容，将发布目录指向该文件夹即可。
 
-When writing post, please always follow this format:
+The same files can be uploaded to Cloudflare Pages, Netlify, Vercel, or a university personal-pages host. Point the publish directory at this folder.
+
+---
+
+## 以后如何改内容 / Editing later
+
+- 修改文字、论文条目或联系方式：编辑 `index.html`。中英文写在成对的 `<span class="lang-zh">` 与 `<span class="lang-en">`（或带同样 class 的段落）中，请两处一起改。
+- 更新简历：用新的 PDF 替换 `assets/Chi_Zhang_CV.pdf`，文件名保持不变。当前简历为 2026 年 8 月版。
+- 更换照片：替换 `assets/chi-zhang.jpg`（建议接近正方形的肖像）。
+- 调整样式：编辑 `css/style.css`。语言切换、移动端菜单与导航高亮在 `js/main.js`。
+- 页脚的“最近更新”需要你在改过内容后手动修改。
+
+Edit copy in `index.html` (keep the Chinese and English versions in sync). Replace `assets/Chi_Zhang_CV.pdf` or `assets/chi-zhang.jpg` in place. Styles live in `css/style.css`; the language toggle, mobile menu, and section highlighting live in `js/main.js`. Update the “Last updated” line in the footer when you make changes.
+
+---
+
+## 文件结构 / File structure
 
 ```
-Description about this post, blablabla
-
-## Title A
-
-### Title A-1
-
-### Title A-2
-
-## Title B
-
-### Title B-1
-
+index.html              网页正文 / the site
+css/style.css           样式 / styles
+js/main.js              语言切换与导航 / language toggle and nav
+assets/chi-zhang.jpg    照片 / portrait
+assets/Chi_Zhang_CV.pdf 简历（2026年8月版）/ CV (August 2026)
+assets/favicon*.png     站点图标 / favicons
+README.md               本说明 / this file
 ```
-
-So, Title A, A-1, A-2, Title B, B-1 will be detected and created as a directory
-
-For example, [a demo post](https://github.com/DONGChuan/DONGChuan.github.io/edit/master/_posts/2016-04-22-CSS-Animation.md)
-
-But if you do not like it or your post is quite short. You want to hide this navigation to make your post occupy your full screen. You just need to set **no-post-nav:true** in the Front Matter of the post where you want to hide this feature :D
-
-#### [Github Module](http://dongchuan.github.io/open-source)
-
-This module will get automatically all your repository information from github. But to test on your local, you must keep internet connection. 
-In the future, it will also show the repositories you contributed a lot and the ones of your organization.
-
-#### [Bookmark Module](http://dongchuan.github.io/bookmark)
-
-To add new marks, you only need to edit [bookmark.md](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/bookmark.md).
-
-#### [Customize About Page](http://dongchuan.github.io/about)
-
-Feel free to customize about.me page to show yourself. You only need to modify [about.md](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/about.md) and [about.html](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/_includes/about.html)
-
-## ToDo
-
-- [ ] List posts by a specified tag
-- [ ] New module FootPrint to show your world around trips
-- [ ] Show projects from your orgnization on github. (Siderbar, in open-source page)
-- [ ] To fix bug - could only test on local with internet connected.
-
-## Contributor
-
-* [DONGChuan](https://github.com/DONGChuan)
-* [Mojtaba Koosej](https://github.com/mkoosej)
-* [shahsaurabh0605](https://github.com/shahsaurabh0605)
-* [Z-Beatles](http://www.waynechu.cn/)
-* [LM450N](https://github.com/LM450N)
-* [XhmikosR](https://github.com/XhmikosR)
-
-## License
-
-The Apache License 2.0
-
-Copyright (c) 2016 DONG Chuan
-
-Check [LICENSE](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/LICENSE) file and [official website](http://www.apache.org/licenses/LICENSE-2.0) for details
